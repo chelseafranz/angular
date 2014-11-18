@@ -25,19 +25,39 @@
                            <!-- equal to name of app.module, which controlls everything inside of body -->
 
     <div class="hero-unit">
+      <div svg></div>
+
       <h1>Angular</h1>
-     <div class="something" ng-controller="PersonController"> <!-- everythign inside of there has scoped access to anything 
-                                                                    scoped inside of that controller -->
-       <!--  <p> Hi, my name is {{ person.name }} and I am {{ person.age }} years old. </p> -->
-       <p ng-repeat="p in people"> 
+      <a href="#/">Home</a>|<a href="#/about">About</a>
+    <div class="container" ng-view></div>
+    <div ng-include src=" 'templates/sidebar-template.html' "></div>
+    <!-- only view within ng-app PeopleList, so you just tell it too look for all views associated with it, no need to specify -->
+
+
+
+
+<!-- 
+     <div class="something" ng-controller="PersonController">
+        <p> Hi, my name is {{ person.name }} and I am {{ person.age }} years old. </p>
+      <p ng-repeat="p in people"> 
        {{$index + 1}}:Hi, my name is {{ p.name}} and I am {{ p.age }} years old. 
-        <a href="#" ng-click="hello(p.name, $index)">Say Hi</a>
-       </p>
+        <a ng-show="p.test" href="#" ng-click="hello(p.name, $index)">Say Hi</a> 
        
-     </div>
-     
-      
-    </div>
+       </p>
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -50,6 +70,9 @@
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/controllers/about_controller.js"></script>
+        <script src="scripts/controllers/person_controller.js"></script>
+        <script src="scripts/controllers/other_controller.js"></script>
         <!-- endbuild -->
 </body>
 </html>

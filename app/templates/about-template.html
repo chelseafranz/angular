@@ -1,0 +1,20 @@
+{{aboutText}}
+<h1 ng-style="myStyle">Check this, yo.</h1>
+
+<div class="color">
+<input type="button" value="white text" ng-click="myStyle={color:'white'}">
+<input type="button" value="black text" ng-click="myStyle={color:'black'}">
+<input type="button" value="font" ng-click="myStyle={'font-family':'Arial'}">
+<input type="button" value="font" ng-click="myStyle={'font-family':'Oswald'}"
+<input type="button" value="gray" ng-click="myStyle={'background-color':'gray'}">
+<input type="button" value="black" ng-click="myStyle={'background-color':'black'}">
+<input type="button" value="clear" ng-click="myStyle={}">
+<br/>
+
+<pre>myStyle={{myStyle}}</pre>
+ </div>
+
+
+
+  <button ng-mouseenter="style={color: 'yellow', 'font-family': 'Oswald'}" ng-mouseleave="style={color: 'black'}" >change some colors
+</button>

@@ -1,41 +1,56 @@
 <!doctype html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>angular</title>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <head>
+            <meta charset="utf-8">
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+            <title>angular</title>
+            <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="styles/vendor.css">
+            <link rel="stylesheet" href="styles/vendor.css">
+<head>
+  <link rel="stylesheet" href="animate.min.css">
+</head>
+            <link rel="stylesheet" href="styles/main.css">
 
-    <link rel="stylesheet" href="styles/main.css">
-
-    <script src="scripts/vendor/modernizr.js"></script>
+            <script src="scripts/vendor/modernizr.js"></script>
   </head>
-  <body>
+  <body ng-app="PeopleList"> <!-- angular derective -->
+                           <!-- equal to name of app.module, which controlls everything inside of body -->
 
     <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
+      <div svg></div>
 
-        <li>Sass</li>
+      <h1>Angular</h1>
+     <div class="something" ng-controller="PersonController">
+        <p> Hi, my name is {{ person.name }} and I am {{ person.age }} years old. </p>
+    <!--    <p ng-repeat="p in people"> 
+       {{$index + 1}}:Hi, my name is {{ p.name}} and I am {{ p.age }} years old. 
+        <a ng-show="p.test" href="#" ng-click="hello(p.name, $index)">Say Hi</a> -->
+       
+       </p>
+
+    <input placeholder="enter name" type="text" ng-model="data.message">
+    <h1> {{'Hello, ' + data.message}}</h1>
 
 
-        <li>Modernizr</li>
+ <button ng-mouseenter="count = count + 1" ng-init="count=0">
+  Increment (when mouse enters)
+</button>
+count: {{count}}
 
-
-        <li>Bourbon & Neat</li>
-
-
-        <li>UnderscoreJS</li>
-
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
-    </div>
+<div class="color">
+<input type="button" value="white text" ng-click="myStyle={color:'white'}">
+<input type="button" value="black text" ng-click="myStyle={color:'black'}">
+<input type="button" value="font" ng-click="myStyle={'font-family':'Arial'}">
+<input type="button" value="font" ng-click="myStyle={'font-family':'Oswald'}"
+<input type="button" value="gray" ng-click="myStyle={'background-color':'gray'}">
+<input type="button" value="black" ng-click="myStyle={'background-color':'black'}">
+<input type="button" value="clear" ng-click="myStyle={}">
+<br/>
+<h1 ng-style="myStyle">Check this, yo.</h1>
+<pre>myStyle={{myStyle}}</pre>
+ </div>
 
     <script src="scripts/vendor.js"></script>
 

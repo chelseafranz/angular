@@ -1,38 +1,33 @@
-var app= angular.module('PeopleList', []);
+(function(){
+angular.module('PeopleList', ['ngRoute']).config( function($routeProvider){
+	$routeProvider.when('/', {
+//string that matches route we are trying to identify with, second thing is a obhect telling that what to do
+		controller: 'PersonController',
+		templateUrl: 'templates/list-template.html'
+	});
 
-// app.config( function($routeProvider){
-
-// 	$routeProvider.when('/', {
-// 		//set controller, view, all kinds of stuff
-// 	});
-
-// });
-
-app.controller('PersonController', function($scope){
-	//anything we want to have access to must be a usable asset inside of function
-
-	// $scope.person = {
-	// 	name: 'Chelsea',
-	// 	age: 25
-	// };
-
-	$scope.people = [
-	{
-		name: 'Chelsea',
-		age: 25
-	},
-		{
-		name: 'Jo',
-		age: 109
-	}
-	];
-
-	$scope.hello= function (n,i){
-		if($scope.people[i].name === 'Chelsea'){
-			alert('hey');
-		}else{
-		alert('hi ' + n);
-	}
-	};
+	$routeProvider.when('/about',{
+		templateUrl:'templates/about-template.html',
+		controller:'AboutController'
+	});
+	$routeProvider.otherwise({
+		templateUrl:'templates/other-template.html',
+		controller:'OtherController'
+	});
 
 });
+
+angular.module('PeopleList').controller('SidebarController', ['$scope', function($scope) {
+	$scope.greeting = 'Whats up?';
+
+}]);
+
+ }());
+
+
+
+
+
+
+
+
